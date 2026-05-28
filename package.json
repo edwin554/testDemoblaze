@@ -1,0 +1,42 @@
+{
+  "name": "demoblaze-cypress-automation",
+  "version": "1.0.0",
+  "description": "Automated E2E testing for DemoBlaze using Cypress with Allure reporting",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:spec": "cypress run --spec",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**\"",
+    "test:e2e": "cypress run --spec \"cypress/e2e/e2e/**\"",
+    "test:all": "npm run clean:reports && cypress run",
+    "test:all:report": "npm run clean:reports && cypress run && npm run allure:serve",
+    "allure:serve": "allure serve allure-results",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "test:allure": "npm run test:all:report",
+    "clean:reports": "node -e \"const fs = require('fs'); ['allure-results', 'allure-report'].forEach(d => fs.rmSync(d, {recursive: true, force: true}))\"",
+    "clean:videos": "node -e \"const fs = require('fs'); fs.rmSync('cypress/videos', {recursive: true, force: true})\"",
+    "clean:screenshots": "node -e \"const fs = require('fs'); fs.rmSync('cypress/screenshots', {recursive: true, force: true})\""
+  },
+  "keywords": [
+    "cypress",
+    "allure",
+    "e2e",
+    "testing",
+    "automation",
+    "demoblaze",
+    "pom",
+    "page-object-model"
+  ],
+  "author": "CYPRESS_EXPERT_AGENT",
+  "license": "MIT",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "allure-commandline": "^2.42.0",
+    "cypress": "^12.17.4"
+  }
+}

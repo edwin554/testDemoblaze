@@ -1,0 +1,15 @@
+{
+  "validPurchase": {
+    "name": "John Doe",
+    "country": "USA",
+    "city": "New York",
+    "creditCard": "1234567890123456",
+    "month": "12",
+    "year": "2026",
+    "cvv": "123"
+  },
+  "products": {
+    "product1": "Samsung galaxy s6",
+    "product2": "Nokia lumia 1520"
+  }
+}
